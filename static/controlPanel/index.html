@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SPŠE AI Control Panel</title>
+    <link rel="stylesheet" href="/controlPanel/controlPanelStyle.css">
+    <script type="module" src="/controlPanel/mainView.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav><a class="active" href="/">Main View</a> <a href="/embed/">E&E</a></nav>
+    </header>
+    <div class="overview">
+        <div class="create-subject">
+            <h2>Obory</h2>
+        </div>
+        <div class="subject-view">
+            <div class="subject-board">
+                <!-- <div class="subject">
+                    <div>
+                        <h2>${sub}</h2><div class="waitingC">Waiting</div>
+                    </div>
+                    <div>
+                    <label for="${subTag}">Přiložte SVP ${sub} .docx</label>
+                    <input type="file" accept=".docx" name="${subTag}" id="${subTag}">
+                    </div>
+                </div> -->
+            </div>
+            <div class="subject-key-board">
+            </div>
+        </div>
+        <button disabled class="add-f-btn base-btn">Odeslat změněné SVP do E&E</button>
+    </div>
+    <div class="blur"></div>
+    <img class="loadingGif" src="/controlPanel/img/loading.gif" alt="">
+</body>

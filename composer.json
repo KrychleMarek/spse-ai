@@ -1,0 +1,14 @@
+{
+    "require": {
+      "ext-gd": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+  "autoload": {
+        "psr-4": { "HS\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "HS\\Tests\\": "tests/" }
+    }
+}

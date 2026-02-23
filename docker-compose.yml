@@ -1,0 +1,57 @@
+services:
+  chatapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chat_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
+    depends_on:
+      qdrant:
+        condition: service_started
+    environment:
+    -  PYTHONUNBUFFERED=1
+    -  QDRANT_HOST=qdrant
+    -  QDRANT_PORT=6333
+    restart: always
+
+ 
+  controlpanel:
+    build:
+      context: .
+      dockerfile: Dockerfile 
+    container_name: control_panel
+    ports:
+      - "8080:8001" # Expose the control panel on host port 8080, running FastAPI on 8001 inside
+    volumes:
+      - ./:/app
+    
+    
+    depends_on: 
+      qdrant:
+        condition: service_started
+    
+    
+    environment:
+    - PYTHONUNBUFFERED=1
+    - QDRANT_HOST=qdrant
+    - QDRANT_PORT=6333
+      
+    # IMPORTANT: This command starts the second FastAPI application
+    command: ["uvicorn", "src.controlPanel.main:app", "--host", "0.0.0.0", "--port", "8001"] # Uvicorn now runs on port 8001
+    restart: always
+  
+  
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant_server
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage 
+    restart: always
+
+volumes:
+  qdrant_data:

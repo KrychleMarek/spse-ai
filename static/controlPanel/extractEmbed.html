@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SPŠE AI Control Panel</title>
+    <link rel="stylesheet" href="/controlPanel/controlPanelStyle.css">
+    <script type="module" src="/controlPanel/extractEmbed.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav><a href="/">Main View</a> <a class="active" href="/embed/">E&E</a></nav>
+    </header>
+    <div class="overview">
+        <div class="create-subject">
+            <h2>Extract & Embedd</h2> <button class="">Přidat SVP</button>
+        </div>
+        <div class="ex-em-view">
+        <div class="board-wrapper">
+            <h2>SVP Čekající na extrakci</h2>
+            <div class="extract-board">
+            </div>
+        </div>
+        <div class="board-wrapper">
+            <h2>SVP Připravené na embedding</h2>
+            <div class="embedd-board">
+
+            </div>
+        </div>
+        </div>
+        <div class="ex-em-buttons-wrapper">
+            <button disabled class="base-btn ex-btn">Extrahovat</button><button disabled class="base-btn em-btn">Embeddovat</button>
+        </div>
+    </div>
+    <div class="blur"></div>
+    <img class="loadingGif" src="/controlPanel/img/loading.gif" alt="">
+</body>
