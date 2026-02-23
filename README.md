@@ -11,6 +11,7 @@
 3. **Zobrazení stránky**
 
     a. Administrátorksý panel: ``` http://localhost:8080/ ```
+   
     b. Uživatelské rozhraní:   ``` http://localhost:8000/ ```
 
 ## Řešitelský tým
